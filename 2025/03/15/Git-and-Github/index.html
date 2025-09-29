@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gloryseeker02.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Git 有多种命令Git 有远程仓库和本地仓库两种。各个仓库中的内容又有多个分支，主要包括主分支（main）和其他分支。每个人可以把远程分支拷贝到本地，进行本地修改，最后把本地仓库在上传到远程仓库中。 git clone address将远程仓库复制到本地。  git commit -m “comment”提交到版本控制  git branch git branch -vv  查看本地分支和远程分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git and Github">
+<meta property="og:url" content="https://gloryseeker02.github.io/2025/03/15/Git-and-Github/index.html">
+<meta property="og:site_name" content="Small_Step">
+<meta property="og:description" content="Git 有多种命令Git 有远程仓库和本地仓库两种。各个仓库中的内容又有多个分支，主要包括主分支（main）和其他分支。每个人可以把远程分支拷贝到本地，进行本地修改，最后把本地仓库在上传到远程仓库中。 git clone address将远程仓库复制到本地。  git commit -m “comment”提交到版本控制  git branch git branch -vv  查看本地分支和远程分">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-15T18:30:33.000Z">
+<meta property="article:modified_time" content="2025-03-15T18:30:33.000Z">
+<meta property="article:author" content="Jasper">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Github">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://gloryseeker02.github.io/2025/03/15/Git-and-Github/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://gloryseeker02.github.io/2025/03/15/Git-and-Github/","path":"2025/03/15/Git-and-Github/","title":"Git and Github"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git and Github | Small_Step</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Small_Step</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">日积跬步</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-%E6%9C%89%E5%A4%9A%E7%A7%8D%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">Git 有多种命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-clone-address"><span class="nav-number">1.1.</span> <span class="nav-text">git clone address</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-commit-m-%E2%80%9Ccomment%E2%80%9D"><span class="nav-number">1.2.</span> <span class="nav-text">git commit -m “comment”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-branch"><span class="nav-number">1.3.</span> <span class="nav-text">git branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-checkout"><span class="nav-number">1.4.</span> <span class="nav-text">git checkout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-push"><span class="nav-number">1.5.</span> <span class="nav-text">git push</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-status"><span class="nav-number">1.6.</span> <span class="nav-text">git status</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-add"><span class="nav-number">1.7.</span> <span class="nav-text">git add .</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-pull"><span class="nav-number">1.8.</span> <span class="nav-text">git pull</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-merge-xxxx"><span class="nav-number">1.9.</span> <span class="nav-text">git merge xxxx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-diff"><span class="nav-number">1.10.</span> <span class="nav-text">git diff</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-reset"><span class="nav-number">1.11.</span> <span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-stash"><span class="nav-number">1.12.</span> <span class="nav-text">git stash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-config"><span class="nav-number">1.13.</span> <span class="nav-text">git config</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-log"><span class="nav-number">1.14.</span> <span class="nav-text">git log</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.15.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jasper</p>
+  <div class="site-description" itemprop="description">knowledge summary</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://gloryseeker02.github.io/2025/03/15/Git-and-Github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jasper">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Small_Step">
+      <meta itemprop="description" content="knowledge summary">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Git and Github | Small_Step">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git and Github
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-03-15 18:30:33" itemprop="dateCreated datePublished" datetime="2025-03-15T18:30:33+00:00">2025-03-15</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="Git-有多种命令"><a href="#Git-有多种命令" class="headerlink" title="Git 有多种命令"></a>Git 有多种命令</h3><p>Git 有远程仓库和本地仓库两种。各个仓库中的内容又有多个分支，主要包括主分支（main）和其他分支。<br>每个人可以把远程分支拷贝到本地，进行本地修改，最后把本地仓库在上传到远程仓库中。</p>
+<h4 id="git-clone-address"><a href="#git-clone-address" class="headerlink" title="git clone address"></a>git clone <em>address</em></h4><pre><code>将远程仓库复制到本地。
+</code></pre>
+<h4 id="git-commit-m-“comment”"><a href="#git-commit-m-“comment”" class="headerlink" title="git commit -m “comment”"></a>git commit -m “comment”</h4><pre><code>提交到版本控制
+</code></pre>
+<h4 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h4><ul>
+<li>git branch -vv<br>  查看本地分支和远程分支的对应关系</li>
+<li>git branch -a<br>  查看本地和远程所有的分支</li>
+<li>git branch –set-upstram-to-origin&#x2F;xxx<br>将本地分支上传到远程仓库的xxx分支并形成关联</li>
+<li>git branch -d xxx<br>  删除本地分支<br>  ps:不能删除当前分支</li>
+<li>git push origin –delete xxx<br>  删除远程分支（慎用）。</li>
+</ul>
+<h4 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h4><ul>
+<li>git checkout -b xxx<br>  以当前分支为基础新建一个xxx分支</li>
+<li>git checkout xxx<br>  从当前分支切换到 xxx分支</li>
+<li>git checkout .<br>  恢复到 git add .之前的内容。</li>
+</ul>
+<h4 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h4><ul>
+<li>git push origin xxx<br>将本地分支更新到远程分支<br>ps:这与 git branch –set-upstream-to-origin&#x2F;xxx 区别是 能不能形成关联</li>
+</ul>
+<h4 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h4><pre><code>查看本地git的状态
+查看仓库的变化
+</code></pre>
+<h4 id="git-add"><a href="#git-add" class="headerlink" title="git add ."></a>git add .</h4><pre><code>添加到缓存里面
+</code></pre>
+<h4 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h4><pre><code>从远程拉取最新代码。
+多人协同编写代码时，使用git pull来看当前的最新代码。
+</code></pre>
+<h4 id="git-merge-xxxx"><a href="#git-merge-xxxx" class="headerlink" title="git merge xxxx"></a>git merge xxxx</h4><pre><code>把两个分支的代码合并一下。
+两个分支同时修改，导致merge出现冲突。
+将 xxxx 分支插入到当前分支。
+xxxx内的分支内容不改变，而当前分支内容会被改动。
+note: git merge 容易出问题，慎用。
+</code></pre>
+<h4 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h4><pre><code>查看修改的文件
+</code></pre>
+<h4 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h4><pre><code>缓存区内容回退
+</code></pre>
+<ul>
+<li>git reset –mixed<br>  缓存区所有内容回退<br>  本地内容修改，但是缓存区内容恢复到上一次。</li>
+<li>git reset HEAD .<br>  同样是回退缓存区内容。</li>
+<li>git reset HEAD filename<br>  指定文件 不添加到缓存。</li>
+<li>git reset –soft HEAD^<br>commit之后文件 回退的暂存区。</li>
+<li>git reset –hard HEAD^<br>commit &#x2F; add 两步同时回退。</li>
+</ul>
+<h4 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h4><p>贮藏功能</p>
+<ul>
+<li>git stash save xxx<br>  将写好的内容暂时贮藏，不提交。</li>
+<li>git stash list<br>查看贮藏列表</li>
+<li>git stash pop stash@{1}<br>查看列表后，根据编号把内容提出出来</li>
+</ul>
+<h4 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h4><ul>
+<li>git config –list<br>查看配置信息</li>
+</ul>
+<h4 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h4><ul>
+<li>git log –graph –oneline<br>  使用简要图示显示git的信息。<br>  通过编号可以回退到需要的版本。<br>  使用 git reset –hard <em>code</em></li>
+</ul>
+<h4 id><a href="#" class="headerlink" title></a></h4>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+              <a href="/tags/Github/" rel="tag"># Github</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/10/15/JitterAndNoise/" rel="prev" title="JitterAndNoise">
+                  <i class="fa fa-angle-left"></i> JitterAndNoise
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/03/16/differential-equation/" rel="next" title="differential equation">
+                  differential equation <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Jasper</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

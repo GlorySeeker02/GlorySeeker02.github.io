@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Git and Github</title>
+    <url>/2025/03/15/Git-and-Github/</url>
+    <content><![CDATA[<h3 id="Git-有多种命令"><a href="#Git-有多种命令" class="headerlink" title="Git 有多种命令"></a>Git 有多种命令</h3><p>Git 有远程仓库和本地仓库两种。各个仓库中的内容又有多个分支，主要包括主分支（main）和其他分支。<br>每个人可以把远程分支拷贝到本地，进行本地修改，最后把本地仓库在上传到远程仓库中。</p>
+<h4 id="git-clone-address"><a href="#git-clone-address" class="headerlink" title="git clone address"></a>git clone <em>address</em></h4><pre><code>将远程仓库复制到本地。
+</code></pre>
+<h4 id="git-commit-m-“comment”"><a href="#git-commit-m-“comment”" class="headerlink" title="git commit -m “comment”"></a>git commit -m “comment”</h4><pre><code>提交到版本控制
+</code></pre>
+<h4 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h4><ul>
+<li>git branch -vv<br>  查看本地分支和远程分支的对应关系</li>
+<li>git branch -a<br>  查看本地和远程所有的分支</li>
+<li>git branch –set-upstram-to-origin&#x2F;xxx<br>将本地分支上传到远程仓库的xxx分支并形成关联</li>
+<li>git branch -d xxx<br>  删除本地分支<br>  ps:不能删除当前分支</li>
+<li>git push origin –delete xxx<br>  删除远程分支（慎用）。</li>
+</ul>
+<h4 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h4><ul>
+<li>git checkout -b xxx<br>  以当前分支为基础新建一个xxx分支</li>
+<li>git checkout xxx<br>  从当前分支切换到 xxx分支</li>
+<li>git checkout .<br>  恢复到 git add .之前的内容。</li>
+</ul>
+<h4 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h4><ul>
+<li>git push origin xxx<br>将本地分支更新到远程分支<br>ps:这与 git branch –set-upstream-to-origin&#x2F;xxx 区别是 能不能形成关联</li>
+</ul>
+<h4 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h4><pre><code>查看本地git的状态
+查看仓库的变化
+</code></pre>
+<h4 id="git-add"><a href="#git-add" class="headerlink" title="git add ."></a>git add .</h4><pre><code>添加到缓存里面
+</code></pre>
+<h4 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h4><pre><code>从远程拉取最新代码。
+多人协同编写代码时，使用git pull来看当前的最新代码。
+</code></pre>
+<h4 id="git-merge-xxxx"><a href="#git-merge-xxxx" class="headerlink" title="git merge xxxx"></a>git merge xxxx</h4><pre><code>把两个分支的代码合并一下。
+两个分支同时修改，导致merge出现冲突。
+将 xxxx 分支插入到当前分支。
+xxxx内的分支内容不改变，而当前分支内容会被改动。
+note: git merge 容易出问题，慎用。
+</code></pre>
+<h4 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h4><pre><code>查看修改的文件
+</code></pre>
+<h4 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h4><pre><code>缓存区内容回退
+</code></pre>
+<ul>
+<li>git reset –mixed<br>  缓存区所有内容回退<br>  本地内容修改，但是缓存区内容恢复到上一次。</li>
+<li>git reset HEAD .<br>  同样是回退缓存区内容。</li>
+<li>git reset HEAD filename<br>  指定文件 不添加到缓存。</li>
+<li>git reset –soft HEAD^<br>commit之后文件 回退的暂存区。</li>
+<li>git reset –hard HEAD^<br>commit &#x2F; add 两步同时回退。</li>
+</ul>
+<h4 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h4><p>贮藏功能</p>
+<ul>
+<li>git stash save xxx<br>  将写好的内容暂时贮藏，不提交。</li>
+<li>git stash list<br>查看贮藏列表</li>
+<li>git stash pop stash@{1}<br>查看列表后，根据编号把内容提出出来</li>
+</ul>
+<h4 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h4><ul>
+<li>git config –list<br>查看配置信息</li>
+</ul>
+<h4 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h4><ul>
+<li>git log –graph –oneline<br>  使用简要图示显示git的信息。<br>  通过编号可以回退到需要的版本。<br>  使用 git reset –hard <em>code</em></li>
+</ul>
+<h4 id><a href="#" class="headerlink" title></a></h4>]]></content>
+      <tags>
+        <tag>Git</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JitterAndNoise</title>
+    <url>/2024/10/15/JitterAndNoise/</url>
+    <content><![CDATA[<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]N. Da Dalt and A. Sheikholeslami, Understanding Jitter and Phase Noise: A Circuits and Systems Perspective, 1st ed. Cambridge University Press, 2018. doi: 10.1017&#x2F;9781316981238.<br>[2]X. Ge, Y. Chen, X. Zhao, P.-I. Mak, and R. P. Martins, “Analysis and Verification of Jitter in Bang-Bang Clock and Data Recovery Circuit With a Second-Order Loop Filter,” IEEE Trans. VLSI Syst., vol. 27, no. 10, pp. 2223–2236, 2019, doi: 10.1109&#x2F;TVLSI.2019.2915769.</p>
+]]></content>
+      <categories>
+        <category>-System Analysis</category>
+      </categories>
+      <tags>
+        <tag>Jitter</tag>
+        <tag>Noise</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linear Regression</title>
+    <url>/2025/09/29/Linear-Regression/</url>
+    <content><![CDATA[<h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>Linear Regression is to represent relationship among 2 or more variables.This blog will show how to calculate the coefficients by the method the Least Mean Square(LMS).</p>
+<h4 id="One-dimension-linear-Regression"><a href="#One-dimension-linear-Regression" class="headerlink" title="One-dimension linear Regression"></a>One-dimension linear Regression</h4><p>For a subset data (x,y), we want to find a line ($\hat{y} &#x3D; \beta_0+\beta_1*x$)which can meet the relationship between y and x as much as possible.<br> <img src="/2025/09/29/Linear-Regression/2025-09-29T095351.png" alt="2025-09-29T095351"><br>Assume the Fitting linear equation is as follow,</p>
+<p>$$<br>\hat{y} &#x3D; {\beta_0}+{\beta_1}x \tag{1}<br>$$</p>
+<p>The difference(Error) is ${e}$ which can be express as,<br>$$<br>{e}&#x3D;y-\hat{y} &#x3D; y-{\beta_0}-{\beta_1}x\tag{2}<br>$$<br>In gernal ，the error’s value   is our consideration and ignore the sign,so we will take error’s square or absolute value as indicator.In the blog ,take ${e}^2$ as error’s indicator.We can calculate the${\beta_0},{\beta_1}$ by finding the extreme value,which case the error is the least value.</p>
+
+$$
+\begin{gather*}
+\frac{\partial{{e}^2}}{\partial{{\beta_0}}}=\frac{\partial{(y-{\beta_0}-{\beta_1x})^2}}{\partial{{\beta_0}}}=-2(y-{\beta_0}-{\beta_1}x)\tag{3}\\
+
+\frac{\partial{{e}^2}}{\partial{{\beta_1}}}=\frac{\partial{(y-{\beta_0}-{\beta_1x})^2}}{\partial{{\beta_1}}}=-2(y-{\beta_0}-{\beta_1}x)x\tag{4}
+\end{gather*}
+$$
+
+<p>For multiple samples,we need to add the error and find the least value.</p>
+
+$$
+\begin{align}
+\frac{\partial{\Sigma{e_i}^2}}{\partial{{\beta_0}}}=\frac{\partial{\Sigma(y_i-{\beta_0}-{\beta_1}x_i)^2}}{\partial{{\beta_0}}}=-2\Sigma( y_i-{\beta_0}-{\beta_1}x_i)\tag{5} \\
+
+\frac{\partial{\Sigma{e_i}^2}}{\partial{{\beta_1}}}=\frac{\partial{\Sigma(y_i-{\beta_0}-{\beta_1}x_i)^2}}{\partial{{\beta_1}}}=-2\Sigma(y_i-{\beta_0}-{\beta_1}x_i)x_i\tag{6}
+\end{align}
+$$
+
+<p>To find the error least, we need make the equation(5),(6) equls to 0.</p>
+
+$$
+\begin{gather*}
+-2\sum_{i=1}^n(y_i-{\beta}_0-{\beta}_1x_i)=0\\
+\Downarrow\\
+n{\beta}_0=\sum_{i=1}^n(y_i-{\beta}_1x_i)\\
+\Downarrow\\
+{\beta}_0=\bar{y}-{\beta}_1\bar{x}\tag{7}
+\end{gather*}
+$$
+Substitue $\beta_0$  in equation (7) to (6),
+$$
+\begin{gather*}
+-2\sum_{i=1}^{n}(y_i-{\beta}_0-{\beta}_1x_i)x_i=0\\
+\Downarrow\\
+\sum_{i=1}^n(y_i-(\bar{y}-{\beta}_1\bar{x})-{\beta}_1x_i)x_i=0\\
+\Downarrow\\
+\sum_{i=1}^n(x_iy_i-x_i\bar{y}+{\beta}_1x_i\bar{x}-{\beta}_1x_i^2)=0\\
+\Downarrow\\
+{\beta}_1\sum_{i=1}^n(x_i\bar{x}-x_i^2)=\sum_{i=1}^n(\bar{y}x_i-x_iy_i)\\
+\Downarrow\\
+{\beta}_1=\frac{\sum x_iy_i-\bar{y}\sum x_i}{\sum x_i^2-\bar{x}\sum x_i}=\frac{\sum(y_i-\bar{y})(x_i-\bar{x})}{\sum(x_i-
+\bar{x})^2}\tag{8}
+\end{gather*}
+$$
+ 
+
+<p>So we solved one dimension linear regression.And Next we will spread the method to multiple dimension by Array calculation</p>
+<h4 id="Multiple-Dimension-linear-regression"><a href="#Multiple-Dimension-linear-regression" class="headerlink" title="Multiple Dimension linear regression"></a>Multiple Dimension linear regression</h4><p>For multiple dimension subset$(x_{1i},x_{2i},…,x_{ni},y_i)$，the linear regression relationship can be as follow,</p>
+
+$$
+\hat{y}_i={\beta}_0+{\beta}_1x_{i1}+{\beta}_2x_{i2}+...+{\beta}_nx_{in}=\boldsymbol{{\beta}^T}\cdot \boldsymbol{x_i}\tag{9}=\boldsymbol{{x_i}^T}\cdot\boldsymbol{\beta}
+$$
+
+
+<p>In the equation,$\boldsymbol{{\beta}^T}=[{\beta}_0,{\beta}_1,...,{\beta}_n]$,$\boldsymbol{{x_i}^T}=[1,x_{i1},x_{i2},...,x_{in}]$ .<br>For multiple groups variables , the linear regression can be expressed as, </p>
+
+$$
+\begin{gather*}
+\left[
+\begin{array}{c}
+\hat{y}_1\\
+\hat{y}_2\\
+\vdots\\
+\hat{y}_m
+\end{array}
+\right]
+=
+\begin{bmatrix}
+1&x_{11}& x_{12}&\cdots&x_{1n}\\
+1&x_{21}&x_{22}&\cdots&x_{2n}\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+1&x_{m1}&x_{m2}&\cdots&x_{mn}
+\end{bmatrix}
+\cdot
+\left[
+\begin{array}{c}
+{\beta}_0\\
+{\beta}_1\\
+\vdots\\
+{\beta}_n
+\end{array}
+\right]
+\end{gather*}
+$$
+
+<p>Simplify the expression as </p>
+
+$$
+\boldsymbol{\hat{y}}=\boldsymbol{X}\cdot\boldsymbol{\beta}\tag{10}
+$$
+
+<p>The error can $e^2$ be express as follow,</p>
+
+$$
+\begin{gather*}
+\begin{aligned}
+e^2&=(\boldsymbol{y}-\boldsymbol{\hat{y}})^T\cdot(\boldsymbol{y}-\boldsymbol{\hat{y}})\\
+&=(\boldsymbol{y}-\boldsymbol{X}\cdot\boldsymbol{\beta})^T\cdot(\boldsymbol{y}-\boldsymbol{X}\cdot\boldsymbol{\beta})\\
+&=\boldsymbol{y}^T\cdot\boldsymbol{y}-\boldsymbol{\beta}^T\boldsymbol{X}^T\boldsymbol{y}-\boldsymbol{y}^T\boldsymbol{X}\boldsymbol{\beta}+\boldsymbol{\beta^TX^TX\beta}
+\end{aligned}\\
+\Downarrow\\
+\begin{aligned}
+\frac{\partial{e^2}}{\partial\boldsymbol{\beta}}=-\boldsymbol{y^TX}-\boldsymbol{y^TX}+\boldsymbol{\beta^TX^TX}+\boldsymbol{\beta^TX^TX}=0\\
+\end{aligned}\\
+\Downarrow\\
+\boldsymbol{\beta^TX^TX}=\boldsymbol{y^TX}\\
+\Downarrow\\
+\boldsymbol{X^TX\beta}=\boldsymbol{X^Ty}\\
+\Downarrow\\
+\boldsymbol{\beta}=\boldsymbol{{(X^TX)}^{-1}X^Ty}\tag{11}
+\end{gather*}
+$$
+
+
+<hr>
+<h4 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h4><p>MatrixCalculus</p>
+]]></content>
+      <categories>
+        <category>Algrithom</category>
+      </categories>
+      <tags>
+        <tag>Algrithom,Pulse_response,LMS,LR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pole and Zero</title>
+    <url>/2024/10/08/Pole-and-Zero/</url>
+    <content><![CDATA[<h2 id="分析思路"><a href="#分析思路" class="headerlink" title="分析思路"></a>分析思路</h2><p>分析一个电路结构的零极点要记住定义</p>
+<ul>
+<li>零点即传输函数为零的频率</li>
+<li>极点即传输函数为$\infty$的频率点<br>对于下图中的电路结构<br><img src="/2024/10/08/Pole-and-Zero/2024-10-08T234741.png" alt="2024-10-08T234741"><br>传输函数为<br>$H(s) &#x3D; \frac{Z2}{Z1+Z2}$</li>
+<li>求零点<ul>
+<li>$ Z1 &#x3D; +\infty$</li>
+<li>$ Z2 &#x3D; 0$</li>
+</ul>
+</li>
+<li>求极点<ul>
+<li>Z1 &#x3D; -Z2</li>
+</ul>
+</li>
+</ul>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><p><img src="/2024/10/08/Pole-and-Zero/2024-10-09T002646.png" alt="2024-10-09T002646"></p>
+<p>图中两种情况</p>
+<ol>
+<li>串联阻抗为零，则需要$Z1&#x3D;-Z2$</li>
+<li>并联阻抗无穷大，需要$Z1&#x3D;-Z2$</li>
+</ol>
+]]></content>
+      <categories>
+        <category>System Analysis</category>
+      </categories>
+      <tags>
+        <tag>PoleAndZero</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown</title>
+    <url>/2024/09/09/PracticeTheMarkdown/</url>
+    <content><![CDATA[<h1 id="一、-markdown纯文本基本语法"><a href="#一、-markdown纯文本基本语法" class="headerlink" title="一、 markdown纯文本基本语法"></a>一、 markdown纯文本基本语法</h1><h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h2><p>markdown 支持两种标题语法，类setext和atx形式。</p>
+<h3 id="1-1-类setext"><a href="#1-1-类setext" class="headerlink" title="1.1 类setext"></a>1.1 类setext</h3><pre><code>这种形式用底线形式：‘=’代表最高阶标题，‘-’代表第二阶标题，语句如下（需要顶格写）：
+</code></pre>
+<p>最高阶标题<br>=&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<p>第二阶标题<br>-——–</p>
+<h3 id="1-2-类atex"><a href="#1-2-类atex" class="headerlink" title="1.2 类atex"></a>1.2 类atex</h3><pre><code>这种形式，则是在行首插入1~6个#，对应标题1到6.\# this is H1
+</code></pre>
+<p>## this is H2</p>
+<h2 id="2-字体"><a href="#2-字体" class="headerlink" title="2. 字体"></a>2. 字体</h2><p>markdown使用*或者_作为标记强调字词的符号，强调字词的两边符号相同。<br>**这是加粗**<br>__这也是加粗__<br>*这是倾斜*<br>_这也是倾斜_<br>***这是加粗斜体***<br>~~这是加删除线~~</p>
+<h2 id="3-分割线"><a href="#3-分割线" class="headerlink" title="3. 分割线"></a>3. 分割线</h2><p>你可以在一行中用三个以上的星号、减号、底线建立一个分割线，行内不能有其他东西。<br>* * *<br>***<br>*****<br>- - -<br>------<br>效果如下</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4. 引用"></a>4. 引用</h2><p>在文字前面添加&gt;<br>&gt;这是一个引用模块<br>&gt;&gt;这是嵌套引用模块<br>&gt; 引用模块也可以包含markdown的部分语法<br>&gt; *这是引用模块中的无序列表</p>
+<p>效果如下：</p>
+<blockquote>
+<p>这是一个引用模块</p>
+<blockquote>
+<p>这是嵌套引用模块</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>引用模块也可以包含markdown的部分语法</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>这是引用模块中的无序列表</li>
+</ul>
+<ul>
+<li>这是另外一种无序列表</li>
+</ul>
+</blockquote>
+<h2 id="5-列表"><a href="#5-列表" class="headerlink" title="5. 列表"></a>5. 列表</h2><p>markdown支持有序列表和无序列表。</p>
+<h3 id="5-1-无序列表"><a href="#5-1-无序列表" class="headerlink" title="5.1 无序列表"></a>5.1 无序列表</h3><p>- 列表内容<br>+ 列表内容<br>* 列表内容<br>效果如下：</p>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<h3 id="5-2-有序列表"><a href="#5-2-有序列表" class="headerlink" title="5.2 有序列表"></a>5.2 有序列表</h3><p>数字+英文句点</p>
+<p>\1. 列表内容<br>\2. 列表内容<br>\4. 列表内容<br>效果如下：</p>
+<ol>
+<li>列表内容</li>
+<li>列表内容</li>
+<li>列表内容<br>注意：有序列表中使用的数字不会影响输出HTML的结果。<br>列表可以嵌套，上一级和下一级之间加三个空格即可。<br>* 一级无序列表<br>*二级无序列表<br>*二级无序列表<br>效果如下</li>
+</ol>
+<ul>
+<li>一级无序列表<ul>
+<li>二级无序列表</li>
+<li>二级无序列表</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-表格"><a href="#6-表格" class="headerlink" title="6. 表格"></a>6. 表格</h2><table>
+<thead>
+<tr>
+<th>表头</th>
+<th align="center">表头</th>
+<th align="right">表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容</td>
+<td align="center">内容</td>
+<td align="right">内容</td>
+</tr>
+<tr>
+<td>内容</td>
+<td align="center">内容</td>
+<td align="right">内容</td>
+</tr>
+</tbody></table>
+<p>第二行分割表头</p>
+<ul>
+<li>有一个就够了</li>
+<li>文字默认居左<ul>
+<li>两边加:表示文字居中</li>
+<li>右边加：表示文字靠右</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-代码"><a href="#7-代码" class="headerlink" title="7. 代码"></a>7. 代码</h2><p>两种方式加入代码</p>
+<ul>
+<li>缩进4个空格或一个制表符</li>
+</ul>
+<p>这是一个普通段落</p>
+<pre><code>import numpy as np
+</code></pre>
+<ul>
+<li>代码之间用反引号包起来</li>
+</ul>
+<p> 这是一句代码 <code>import matplot.plot as plt</code></p>
+<ul>
+<li>代码块</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplot.plot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+
+<p>在上面的&#96;&#96;&#96;注明代码类型，可以产生高亮。</p>
+<h2 id="8-段落与换行"><a href="#8-段落与换行" class="headerlink" title="8. 段落与换行"></a>8. 段落与换行</h2><p>一个markdown是由一个或者多个文本行组成，前后要有一个以上的空行。普通段落不该用空格或者制表符来缩进。两个文字块要用空行来分隔。</p>
+<h1 id="二、文本进阶"><a href="#二、文本进阶" class="headerlink" title="二、文本进阶"></a>二、文本进阶</h1><h2 id="1-字体"><a href="#1-字体" class="headerlink" title="1. 字体"></a>1. 字体</h2><p>&lt;font face&#x3D;”黑体”&gt;我是黑体字&lt;&#x2F;font&gt;<br>&lt;font face&#x3D;”微软雅黑”&gt;我是微软雅黑&lt;&#x2F;font&gt;</p>
+<p>效果如下：</p>
+<p><code>&lt;font face=&quot;黑体&quot;&gt;</code>我是黑体字 <code>&lt;/font&gt;</code><br><code>&lt;font face=&quot;微软雅黑&quot;&gt;</code>我是微软雅黑 <code>&lt;/font&gt;</code></p>
+<h2 id="2-为文字添加背景色"><a href="#2-为文字添加背景色" class="headerlink" title="2. 为文字添加背景色"></a>2. 为文字添加背景色</h2><p>将一整行看作一个表格<br>&lt;table&gt;<code>&lt;tr&gt;&lt;td bgcolor=yellow&gt;</code>背景色黄色 <code>&lt;/td&gt;&lt;/tr&gt;``&lt;/table&gt;</code><br>效果如下：</p>
+<table><tr><td bgcolor="yellow">背景色黄色</td></tr></table>
+
+<h2 id="3-设置文字居中"><a href="#3-设置文字居中" class="headerlink" title="3.设置文字居中"></a>3.设置文字居中</h2><p>&lt;center&gt;居中&lt;&#x2F;center&gt;<br>&lt;p align&#x3D;”left”&gt;左对齐&lt;&#x2F;p&gt;<br>&lt;p align&#x3D;”right”&gt;右对齐&lt;&#x2F;p&gt;<br>效果如下：</p>
+<center>居中</center>
+<p align="left">左对齐</p>
+<p align="right">右对齐</p>
+
+<h2 id="4-加入上下标"><a href="#4-加入上下标" class="headerlink" title="4.加入上下标"></a>4.加入上下标</h2><p>H&lt;sub&gt;2&lt;&#x2F;sub&gt;O CO&lt;sub&gt;2&lt;&#x2F;sub&gt;<br>Huawei&lt;sup&gt;TM&lt;&#x2F;sup&gt;</p>
+<p>效果如下：</p>
+<p>H <code>&lt;sub&gt;</code>2 <code>&lt;/sub&gt;</code>O CO <code>&lt;sub&gt;</code>2 <code>&lt;/sub&gt;</code><br>Huawei <code>&lt;sup&gt;</code>TM <code>&lt;/sup&gt;</code></p>
+<h2 id="三、Markdown-进阶使用"><a href="#三、Markdown-进阶使用" class="headerlink" title="三、Markdown 进阶使用"></a>三、Markdown 进阶使用</h2><p>markdown 需要插入一些图片，链接。由于markdown 只关注于纯文本因此需要一些引用。</p>
+<h3 id="1-超链接"><a href="#1-超链接" class="headerlink" title="1.超链接"></a>1.超链接</h3><p>markdown 两种形式的链接语法：行内式和参考式。不管哪一种，链接文字都要用[方括号]来标记。</p>
+<ol>
+<li>行内式链接<br>*要建立行内式链接，只要在方括号后面紧接着圆括号并插入网址链接即可，方括号和圆括号之间不能有空格。如果想加上链接title文字，只要在网址后面用双引号把title包起来即可。<br>this is [an example](<a href="https://www.baidu.com/">https://www.baidu.com/</a> “百度”) inline link.<br>效果如下：<br>this is <a href="https://www.baidu.com/" title="百度">an example</a> inline link.<br>*如果想要在新页面打开，可以用html语言的a标签代替<br>&lt;a href&#x3D;”<a href="https://cn.bing.com/">https://cn.bing.com/</a>“ target &#x3D; “_blank”&gt;必应&lt;&#x2F;a&gt;<br>效果如下：<br><code>&lt;a href=&quot;https://cn.bing.com/&quot; target = &quot;_blank&quot;&gt;</code>必应 <code>&lt;/a&gt;</code></li>
+<li>参考式链接<br>在链接文字的后面再添加一个方括号并填入应以便是链接的标识。<br>This is [an example]&lt;sup&gt;[1]&lt;&#x2F;sup&gt; refernece-style link.<br>接着在文件的任意处，你可以把这个标记的链接内容定义出来。<br>[1]: \<a href="https://cn.bing.com/">https://cn.bing.com/</a> &quot;bing”<br>效果如下:<br>This is [an example]<code>&lt;sup&gt;</code>[1]<code>&lt;/sup&gt;</code> refernece-style link.<br>[1]: <a href="https://cn.bing.com/">https://cn.bing.com/</a> “bing”</li>
+</ol>
+<h3 id="2-自动链接"><a href="#2-自动链接" class="headerlink" title="2.自动链接"></a>2.自动链接</h3><p>处理网址和电子邮箱，只要用尖括号包起来，markdown会自动把它转换成链接<br><a href="https://cn.bing.com/">https://cn.bing.com/</a></p>
+<h3 id="3-插入图片"><a href="#3-插入图片" class="headerlink" title="3.插入图片"></a>3.插入图片</h3><p>Markdown使用一种语法来标记图片，同样允许两种样式：行内式和参考式</p>
+<ul>
+<li>行内式</li>
+</ul>
+<p>语法<br><img src="/2024/09/09/PracticeTheMarkdown/2024-09-08T003605.png" alt="2024-09-08T003605"></p>
+<h3 id="4-调整图片格式"><a href="#4-调整图片格式" class="headerlink" title="4.调整图片格式"></a>4.调整图片格式</h3><h3 id="5-latex公式"><a href="#5-latex公式" class="headerlink" title="5. latex公式"></a>5. latex公式</h3><p>$ $ 表示行内公式，例如</p>
+<p>$ X\stackrel{F}{\longrightarrow}Y $</p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>differential equation</title>
+    <url>/2025/03/16/differential-equation/</url>
+    <content><![CDATA[<p>在matlab中有两种方法求解微分方程，分别是<em>符号求解</em>和<em>数值求解</em>。</p>
+<h4 id="符号求解"><a href="#符号求解" class="headerlink" title="符号求解"></a>符号求解</h4><p> dsolve(‘方程1’，‘方程2’,…’方程n’,初始条件，自变量)<br> Dy代表y的导数，D2y代表二阶导数。</p>
+<ul>
+<li>没有初始值，则会求通解<br>  求解$y’’+2y’+y&#x3D;x^2$<br>  matlab code 如下 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">y=dsolve(<span class="string">&#x27;D2y+2*Dy+y-x^2=0&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>有初始值<ul>
+<li>求解<br> $$<br>  \left<br>  \lbrace<br>  \begin{aligned}<br>  y’’+4y’+29y&#x3D;0\<br>  y(0) &#x3D; 0,y’(0)&#x3D;15<br>  \end{aligned}<br>  \right.<br> $$<ul>
+<li>matlab code 如下 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">y=dsolve(<span class="string">&#x27;D2y+4*Dy+29*y&#x27;</span>,<span class="string">&#x27;y(0)=0,Dy(0)=15&#x27;</span>,<span class="string">&#x27;x&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>求解状态方程<br> $$<br>  \left<br>  \lbrace<br>  \begin{aligned}<br>      \frac{dx}{dt}&amp;&#x3D;2x-3y+3z\<br>      \frac{dy}{dt}&amp;&#x3D;4x-5y+3z\<br>      \frac{dz}{dt}&amp;&#x3D;4x-4y+2z\<br>  x(0) &amp;&#x3D; 1,y(0)&#x3D;2,z(0)&#x3D;1<br>  \end{aligned}<br>  \right.<br> $$</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">eq1=<span class="string">&#x27;Dx=2*x-3*y+3*z&#x27;</span>;</span><br><span class="line">eq2=<span class="string">&#x27;Dy=4*x-5*y+3*z&#x27;</span>;</span><br><span class="line">eq3=<span class="string">&#x27;Dz=4*x-4*y+2*z&#x27;</span>;</span><br><span class="line">[x,y,z]=dsolve(eq1,eq2,eq3,<span class="string">&#x27;x(0)=1,y(0)=2,z(0)=1&#x27;</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>matlab</tag>
+        <tag>diff_equation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/07/07/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo,github pages,github action部署文章</title>
+    <url>/2024/09/08/hexo-ghpages-ghaction/</url>
+    <content><![CDATA[<p>最近在尝试使用hexo+github pages + github actions 完成博客部署，期间遇到了一些问题，走了很多弯路。需要记录下来，以防重复踩坑。</p>
+<p>我使用的方案是网上比较常见的，本地更新博客内容，然后将内容推送到一个私有仓库（private）中，在通过触发github actions 将博客内容部署到公共目录（public）上。这些步骤网上教程较多。</p>
+<p><a href="https://xiamu-ssr.github.io/Hexo/2024/06/19/2024-H1/2024-06-19-12-31-52/?t=1725729774118" title="参考文章">参考文章链接</a></p>
+<p>期间遇到的问题</p>
+<ul>
+<li>博客目录中 source&#x2F;themes文件夹不能上传到 github中，导致网页空白。<ul>
+<li><p>解决方案：将source&#x2F;themes中的.git文件夹移走，重新push</p>
+<p><a href="https://blog.meta-code.top/2021/10/02/2021-12/">github仓库中themes消失解决方案</a></p>
+</li>
+</ul>
+</li>
+<li>博客中不能正常显示图片问题，主要是路径问题。<ul>
+<li>解决方案：<ul>
+<li>在_config.yml中重新设置post_asset_folder<br><img src="/2024/09/08/hexo-ghpages-ghaction/2024-09-08T013805.png" alt="2024-09-08T013805"><br><em>注：我使用的是VScode,其中有个插件 hexo-utils可以使用ctrl+alt+v将图片直接贴在markdown文件中</em></li>
+<li>再在_config.yml文件中 添加如下命令，是 github actions 安装插件，调整从.md文件转换到.html格式出现的路径变换问题<br><img src="/2024/09/08/hexo-ghpages-ghaction/2024-09-08T014303.png" alt="2024-09-08T014303"></li>
+<li><a href="https://blog.csdn.net/m0_43401436/article/details/107191688#:~:text=%EE%80%80%E4%BB%8A%E5%A4%A9%E6%99%9A%E4%B8%8A%E8%8A%B1%E4%BA%86%E5%A4%A7%E6%A6%821%E4%B8%AA%E5%B0%8F%E6%97%B6%E5%9C%A8%E6%99%9A%E4%B8%8A%E6%90%9C%E5%AF%BB%E5%90%84%E7%A7%8Dhexo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%8C%E5%BE%88%E5%A4%9A%E6%96%B9%E6%B3%95%E6%98%AF%E9%87%8D%E5%8F%A0%E7%9A%84%EF%BC%8C%E6%89%80%E4%BB%A5%E7%9C%9F%E6%AD%A3%E4%B8%8D%E5%90%8C%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E5%B9%B6%E4%B8%8D%E5%A4%9A%E3%80%82%EE%80%81">参考文章</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>这些是我在部署过程遇到的问题，希望对后面的人有所帮助。</p>
+]]></content>
+      <categories>
+        <category>hexo部署</category>
+      </categories>
+      <tags>
+        <tag>hexo 历程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SignalAndSystem</title>
+    <url>/2024/10/06/signalAndSystem/</url>
+    <content><![CDATA[<h2 id="单边周期信号Laplance变换"><a href="#单边周期信号Laplance变换" class="headerlink" title="单边周期信号Laplance变换"></a>单边周期信号Laplance变换</h2><p>$$<br>\begin{aligned}<br>  x(t)&amp;\stackrel{L}{\longrightarrow}X(s),&amp; x \in R \\<br>  x(t-T)&amp;\stackrel{L}{\longrightarrow}X(s)\cdot e^{-sT},&amp;x\in R \\<br>  x(t-2T)&amp;\stackrel{L}{\longrightarrow}X(s)\cdot e^{-s2T},&amp;x\in R\\<br>  \vdots \\<br>    x(t-nT)&amp;\stackrel{L}{\longrightarrow}X(s)\cdot e^{-snT},&amp;x\in R<br>\end{aligned}<br>$$<br>若$x_T(t)&#x3D;\sum\limits_{n&#x3D;0}^{+\infty}x(t-nT)$<br>则<br>$$<br>\begin{aligned}<br>x_T(t)&amp;\stackrel{L}{\longrightarrow}\lim_{n\to+\infty}(1+e^{-sT}+e^{-2sT}\cdots+e^{-nsT})X(s) \\<br>&amp;&#x3D;\lim_{n\to+\infty}\frac{1-e^{-(n+1)sT}}{1-e^{-sT}}X(s)<br>\\<br>&amp;\overset{Re[s]&gt;0}{&#x3D;}\frac{1}{1-e^{-sT}}X(s),&amp;R\cap Re[s]&gt;0<br>\end{aligned}<br>$$</p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p>1.<br>$$<br>\lim\limits_{n&#x3D;0}^{+\infty}\delta(t-nT)\stackrel{L}{\longrightarrow}\frac{1}{1-e^{-sT}},Re[s]&gt;0<br>$$<br>2.<img src="/2024/10/06/signalAndSystem/2024-10-07T015834.png" alt="2024-10-07T015834"><br>原始单边laplace变换<br>$$<br>\begin{aligned}<br>x(t)&amp;&#x3D;u(t)-u(t-T&#x2F;2)\\<br>x(t)&amp;\stackrel{L}{\longrightarrow} \frac{1-e^{-sT&#x2F;2}}{s}<br>\end{aligned}<br>$$<br>对于周期性波形来说<br>$$<br>x_T(t)\stackrel{L}{\longrightarrow} \frac{1-e^{-sT&#x2F;2}}{s}\cdot\frac{1}{1-e^{-sT}},Re[s]&gt;0<br>$$</p>
+<h2 id="Laplace-变换解常微分方程"><a href="#Laplace-变换解常微分方程" class="headerlink" title="Laplace 变换解常微分方程"></a>Laplace 变换解常微分方程</h2><p>Laplace 解常微分方程有三种题型<br><img src="/2024/10/06/signalAndSystem/diagram1.png" alt="三种格式关系"></p>
+<ul>
+<li><p>题型一</p>
+<p>$$<br>y’’+3y’+2y&#x3D;x<br>$$</p>
+<p>当$ x(t)&#x3D;e^{-t}u(t)$时，求y(t)</p>
+<ul>
+<li>解</li>
+</ul>
+<p>$$<br>H(s)&#x3D;\frac{1}{s^2+3s+2}<br>$$</p>
+</li>
+</ul>
+<p>$$<br>\begin{aligned}<br>    Y(s)&amp;&#x3D;H(s)\cdot X(s) \\<br>    &amp;&#x3D;\frac{1}{s^2+3s+2}\cdot \frac{1}{s+1} \\<br>    &amp;&#x3D;\frac{1}{(s+1)^2}\cdot\frac{1}{s+2} \\<br>    &amp;&#x3D;\frac{A}{(s+1)^2}+\frac{B}{s+1}+\frac{C}{s+2} \\<br>    &amp;&#x3D;\frac{1}{(s+1)^2}-\frac{1}{s+1}+\frac{1}{s+2}<br>\end{aligned}<br>$$<br>  则<br>$$<br>  \begin{aligned}<br>    y(t)&amp;&#x3D;te^{-t}u(t)-e^{-t}u(t)+e^{-2t}u(t)<br>  \end{aligned}<br>$$</p>
+<ul>
+<li><h2 id="题型二"><a href="#题型二" class="headerlink" title="题型二"></a>题型二</h2></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>S transform</tag>
+        <tag>signal and system</tag>
+      </tags>
+  </entry>
+</search>

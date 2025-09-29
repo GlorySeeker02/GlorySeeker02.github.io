@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gloryseeker02.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一、 markdown纯文本基本语法1. 标题markdown 支持两种标题语法，类setext和atx形式。 1.1 类setext这种形式用底线形式：‘&#x3D;’代表最高阶标题，‘-’代表第二阶标题，语句如下（需要顶格写）：  最高阶标题&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 第二阶标题-——– 1.2 类atex这种形式，则是在行首插入1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown">
+<meta property="og:url" content="https://gloryseeker02.github.io/2024/09/09/PracticeTheMarkdown/index.html">
+<meta property="og:site_name" content="Small_Step">
+<meta property="og:description" content="一、 markdown纯文本基本语法1. 标题markdown 支持两种标题语法，类setext和atx形式。 1.1 类setext这种形式用底线形式：‘&#x3D;’代表最高阶标题，‘-’代表第二阶标题，语句如下（需要顶格写）：  最高阶标题&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; 第二阶标题-——– 1.2 类atex这种形式，则是在行首插入1">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gloryseeker02.github.io/2024/09/09/PracticeTheMarkdown/2024-09-08T003605.png">
+<meta property="article:published_time" content="2024-09-09T13:53:17.000Z">
+<meta property="article:modified_time" content="2024-10-07T03:00:56.000Z">
+<meta property="article:author" content="Jasper">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gloryseeker02.github.io/2024/09/09/PracticeTheMarkdown/2024-09-08T003605.png">
+
+
+<link rel="canonical" href="https://gloryseeker02.github.io/2024/09/09/PracticeTheMarkdown/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://gloryseeker02.github.io/2024/09/09/PracticeTheMarkdown/","path":"2024/09/09/PracticeTheMarkdown/","title":"Markdown"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Markdown | Small_Step</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Small_Step</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">日积跬步</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81-markdown%E7%BA%AF%E6%96%87%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">一、 markdown纯文本基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">1. 标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E7%B1%BBsetext"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 类setext</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E7%B1%BBatex"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 类atex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AD%97%E4%BD%93"><span class="nav-number">1.2.</span> <span class="nav-text">2. 字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">1.3.</span> <span class="nav-text">3. 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%BC%95%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">4. 引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%88%97%E8%A1%A8"><span class="nav-number">1.5.</span> <span class="nav-text">5. 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 有序列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E8%A1%A8%E6%A0%BC"><span class="nav-number">1.6.</span> <span class="nav-text">6. 表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E4%BB%A3%E7%A0%81"><span class="nav-number">1.7.</span> <span class="nav-text">7. 代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%AE%B5%E8%90%BD%E4%B8%8E%E6%8D%A2%E8%A1%8C"><span class="nav-number">1.8.</span> <span class="nav-text">8. 段落与换行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%96%87%E6%9C%AC%E8%BF%9B%E9%98%B6"><span class="nav-number">2.</span> <span class="nav-text">二、文本进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AD%97%E4%BD%93"><span class="nav-number">2.1.</span> <span class="nav-text">1. 字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B8%BA%E6%96%87%E5%AD%97%E6%B7%BB%E5%8A%A0%E8%83%8C%E6%99%AF%E8%89%B2"><span class="nav-number">2.2.</span> <span class="nav-text">2. 为文字添加背景色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%AE%BE%E7%BD%AE%E6%96%87%E5%AD%97%E5%B1%85%E4%B8%AD"><span class="nav-number">2.3.</span> <span class="nav-text">3.设置文字居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%8A%A0%E5%85%A5%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="nav-number">2.4.</span> <span class="nav-text">4.加入上下标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Markdown-%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">2.5.</span> <span class="nav-text">三、Markdown 进阶使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">2.5.1.</span> <span class="nav-text">1.超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%87%AA%E5%8A%A8%E9%93%BE%E6%8E%A5"><span class="nav-number">2.5.2.</span> <span class="nav-text">2.自动链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-number">2.5.3.</span> <span class="nav-text">3.插入图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%B0%83%E6%95%B4%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.5.4.</span> <span class="nav-text">4.调整图片格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-latex%E5%85%AC%E5%BC%8F"><span class="nav-number">2.5.5.</span> <span class="nav-text">5. latex公式</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jasper</p>
+  <div class="site-description" itemprop="description">knowledge summary</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://gloryseeker02.github.io/2024/09/09/PracticeTheMarkdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jasper">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Small_Step">
+      <meta itemprop="description" content="knowledge summary">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Markdown | Small_Step">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Markdown
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-09-09 13:53:17" itemprop="dateCreated datePublished" datetime="2024-09-09T13:53:17+00:00">2024-09-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-10-07 03:00:56" itemprop="dateModified" datetime="2024-10-07T03:00:56+00:00">2024-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/markdown/" itemprop="url" rel="index"><span itemprop="name">markdown</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="一、-markdown纯文本基本语法"><a href="#一、-markdown纯文本基本语法" class="headerlink" title="一、 markdown纯文本基本语法"></a>一、 markdown纯文本基本语法</h1><h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h2><p>markdown 支持两种标题语法，类setext和atx形式。</p>
+<h3 id="1-1-类setext"><a href="#1-1-类setext" class="headerlink" title="1.1 类setext"></a>1.1 类setext</h3><pre><code>这种形式用底线形式：‘=’代表最高阶标题，‘-’代表第二阶标题，语句如下（需要顶格写）：
+</code></pre>
+<p>最高阶标题<br>=&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<p>第二阶标题<br>-——–</p>
+<h3 id="1-2-类atex"><a href="#1-2-类atex" class="headerlink" title="1.2 类atex"></a>1.2 类atex</h3><pre><code>这种形式，则是在行首插入1~6个#，对应标题1到6.\# this is H1
+</code></pre>
+<p>## this is H2</p>
+<h2 id="2-字体"><a href="#2-字体" class="headerlink" title="2. 字体"></a>2. 字体</h2><p>markdown使用*或者_作为标记强调字词的符号，强调字词的两边符号相同。<br>**这是加粗**<br>__这也是加粗__<br>*这是倾斜*<br>_这也是倾斜_<br>***这是加粗斜体***<br>~~这是加删除线~~</p>
+<h2 id="3-分割线"><a href="#3-分割线" class="headerlink" title="3. 分割线"></a>3. 分割线</h2><p>你可以在一行中用三个以上的星号、减号、底线建立一个分割线，行内不能有其他东西。<br>* * *<br>***<br>*****<br>- - -<br>------<br>效果如下</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="4-引用"><a href="#4-引用" class="headerlink" title="4. 引用"></a>4. 引用</h2><p>在文字前面添加&gt;<br>&gt;这是一个引用模块<br>&gt;&gt;这是嵌套引用模块<br>&gt; 引用模块也可以包含markdown的部分语法<br>&gt; *这是引用模块中的无序列表</p>
+<p>效果如下：</p>
+<blockquote>
+<p>这是一个引用模块</p>
+<blockquote>
+<p>这是嵌套引用模块</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>引用模块也可以包含markdown的部分语法</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>这是引用模块中的无序列表</li>
+</ul>
+<ul>
+<li>这是另外一种无序列表</li>
+</ul>
+</blockquote>
+<h2 id="5-列表"><a href="#5-列表" class="headerlink" title="5. 列表"></a>5. 列表</h2><p>markdown支持有序列表和无序列表。</p>
+<h3 id="5-1-无序列表"><a href="#5-1-无序列表" class="headerlink" title="5.1 无序列表"></a>5.1 无序列表</h3><p>- 列表内容<br>+ 列表内容<br>* 列表内容<br>效果如下：</p>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<ul>
+<li>列表内容</li>
+</ul>
+<h3 id="5-2-有序列表"><a href="#5-2-有序列表" class="headerlink" title="5.2 有序列表"></a>5.2 有序列表</h3><p>数字+英文句点</p>
+<p>\1. 列表内容<br>\2. 列表内容<br>\4. 列表内容<br>效果如下：</p>
+<ol>
+<li>列表内容</li>
+<li>列表内容</li>
+<li>列表内容<br>注意：有序列表中使用的数字不会影响输出HTML的结果。<br>列表可以嵌套，上一级和下一级之间加三个空格即可。<br>* 一级无序列表<br>*二级无序列表<br>*二级无序列表<br>效果如下</li>
+</ol>
+<ul>
+<li>一级无序列表<ul>
+<li>二级无序列表</li>
+<li>二级无序列表</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-表格"><a href="#6-表格" class="headerlink" title="6. 表格"></a>6. 表格</h2><table>
+<thead>
+<tr>
+<th>表头</th>
+<th align="center">表头</th>
+<th align="right">表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容</td>
+<td align="center">内容</td>
+<td align="right">内容</td>
+</tr>
+<tr>
+<td>内容</td>
+<td align="center">内容</td>
+<td align="right">内容</td>
+</tr>
+</tbody></table>
+<p>第二行分割表头</p>
+<ul>
+<li>有一个就够了</li>
+<li>文字默认居左<ul>
+<li>两边加:表示文字居中</li>
+<li>右边加：表示文字靠右</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-代码"><a href="#7-代码" class="headerlink" title="7. 代码"></a>7. 代码</h2><p>两种方式加入代码</p>
+<ul>
+<li>缩进4个空格或一个制表符</li>
+</ul>
+<p>这是一个普通段落</p>
+<pre><code>import numpy as np
+</code></pre>
+<ul>
+<li>代码之间用反引号包起来</li>
+</ul>
+<p> 这是一句代码 <code>import matplot.plot as plt</code></p>
+<ul>
+<li>代码块</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplot.plot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+
+<p>在上面的&#96;&#96;&#96;注明代码类型，可以产生高亮。</p>
+<h2 id="8-段落与换行"><a href="#8-段落与换行" class="headerlink" title="8. 段落与换行"></a>8. 段落与换行</h2><p>一个markdown是由一个或者多个文本行组成，前后要有一个以上的空行。普通段落不该用空格或者制表符来缩进。两个文字块要用空行来分隔。</p>
+<h1 id="二、文本进阶"><a href="#二、文本进阶" class="headerlink" title="二、文本进阶"></a>二、文本进阶</h1><h2 id="1-字体"><a href="#1-字体" class="headerlink" title="1. 字体"></a>1. 字体</h2><p>&lt;font face&#x3D;”黑体”&gt;我是黑体字&lt;&#x2F;font&gt;<br>&lt;font face&#x3D;”微软雅黑”&gt;我是微软雅黑&lt;&#x2F;font&gt;</p>
+<p>效果如下：</p>
+<p><code>&lt;font face=&quot;黑体&quot;&gt;</code>我是黑体字 <code>&lt;/font&gt;</code><br><code>&lt;font face=&quot;微软雅黑&quot;&gt;</code>我是微软雅黑 <code>&lt;/font&gt;</code></p>
+<h2 id="2-为文字添加背景色"><a href="#2-为文字添加背景色" class="headerlink" title="2. 为文字添加背景色"></a>2. 为文字添加背景色</h2><p>将一整行看作一个表格<br>&lt;table&gt;<code>&lt;tr&gt;&lt;td bgcolor=yellow&gt;</code>背景色黄色 <code>&lt;/td&gt;&lt;/tr&gt;``&lt;/table&gt;</code><br>效果如下：</p>
+<table><tr><td bgcolor="yellow">背景色黄色</td></tr></table>
+
+<h2 id="3-设置文字居中"><a href="#3-设置文字居中" class="headerlink" title="3.设置文字居中"></a>3.设置文字居中</h2><p>&lt;center&gt;居中&lt;&#x2F;center&gt;<br>&lt;p align&#x3D;”left”&gt;左对齐&lt;&#x2F;p&gt;<br>&lt;p align&#x3D;”right”&gt;右对齐&lt;&#x2F;p&gt;<br>效果如下：</p>
+<center>居中</center>
+<p align="left">左对齐</p>
+<p align="right">右对齐</p>
+
+<h2 id="4-加入上下标"><a href="#4-加入上下标" class="headerlink" title="4.加入上下标"></a>4.加入上下标</h2><p>H&lt;sub&gt;2&lt;&#x2F;sub&gt;O CO&lt;sub&gt;2&lt;&#x2F;sub&gt;<br>Huawei&lt;sup&gt;TM&lt;&#x2F;sup&gt;</p>
+<p>效果如下：</p>
+<p>H <code>&lt;sub&gt;</code>2 <code>&lt;/sub&gt;</code>O CO <code>&lt;sub&gt;</code>2 <code>&lt;/sub&gt;</code><br>Huawei <code>&lt;sup&gt;</code>TM <code>&lt;/sup&gt;</code></p>
+<h2 id="三、Markdown-进阶使用"><a href="#三、Markdown-进阶使用" class="headerlink" title="三、Markdown 进阶使用"></a>三、Markdown 进阶使用</h2><p>markdown 需要插入一些图片，链接。由于markdown 只关注于纯文本因此需要一些引用。</p>
+<h3 id="1-超链接"><a href="#1-超链接" class="headerlink" title="1.超链接"></a>1.超链接</h3><p>markdown 两种形式的链接语法：行内式和参考式。不管哪一种，链接文字都要用[方括号]来标记。</p>
+<ol>
+<li>行内式链接<br>*要建立行内式链接，只要在方括号后面紧接着圆括号并插入网址链接即可，方括号和圆括号之间不能有空格。如果想加上链接title文字，只要在网址后面用双引号把title包起来即可。<br>this is [an example](<a target="_blank" rel="noopener" href="https://www.baidu.com/">https://www.baidu.com/</a> “百度”) inline link.<br>效果如下：<br>this is <a target="_blank" rel="noopener" href="https://www.baidu.com/" title="百度">an example</a> inline link.<br>*如果想要在新页面打开，可以用html语言的a标签代替<br>&lt;a href&#x3D;”<a target="_blank" rel="noopener" href="https://cn.bing.com/">https://cn.bing.com/</a>“ target &#x3D; “_blank”&gt;必应&lt;&#x2F;a&gt;<br>效果如下：<br><code>&lt;a href=&quot;https://cn.bing.com/&quot; target = &quot;_blank&quot;&gt;</code>必应 <code>&lt;/a&gt;</code></li>
+<li>参考式链接<br>在链接文字的后面再添加一个方括号并填入应以便是链接的标识。<br>This is [an example]&lt;sup&gt;[1]&lt;&#x2F;sup&gt; refernece-style link.<br>接着在文件的任意处，你可以把这个标记的链接内容定义出来。<br>[1]: \<a target="_blank" rel="noopener" href="https://cn.bing.com/">https://cn.bing.com/</a> &quot;bing”<br>效果如下:<br>This is [an example]<code>&lt;sup&gt;</code>[1]<code>&lt;/sup&gt;</code> refernece-style link.<br>[1]: <a target="_blank" rel="noopener" href="https://cn.bing.com/">https://cn.bing.com/</a> “bing”</li>
+</ol>
+<h3 id="2-自动链接"><a href="#2-自动链接" class="headerlink" title="2.自动链接"></a>2.自动链接</h3><p>处理网址和电子邮箱，只要用尖括号包起来，markdown会自动把它转换成链接<br><a target="_blank" rel="noopener" href="https://cn.bing.com/">https://cn.bing.com/</a></p>
+<h3 id="3-插入图片"><a href="#3-插入图片" class="headerlink" title="3.插入图片"></a>3.插入图片</h3><p>Markdown使用一种语法来标记图片，同样允许两种样式：行内式和参考式</p>
+<ul>
+<li>行内式</li>
+</ul>
+<p>语法<br><img src="/2024/09/09/PracticeTheMarkdown/2024-09-08T003605.png" alt="2024-09-08T003605"></p>
+<h3 id="4-调整图片格式"><a href="#4-调整图片格式" class="headerlink" title="4.调整图片格式"></a>4.调整图片格式</h3><h3 id="5-latex公式"><a href="#5-latex公式" class="headerlink" title="5. latex公式"></a>5. latex公式</h3><p>$ $ 表示行内公式，例如</p>
+<p>$ X\stackrel{F}{\longrightarrow}Y $</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/09/08/hexo-ghpages-ghaction/" rel="prev" title="hexo,github pages,github action部署文章">
+                  <i class="fa fa-angle-left"></i> hexo,github pages,github action部署文章
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/10/06/signalAndSystem/" rel="next" title="SignalAndSystem">
+                  SignalAndSystem <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Jasper</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
